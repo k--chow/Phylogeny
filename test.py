@@ -49,4 +49,14 @@ for i in range(0, len(dict2)):
         Matrix[i][j] = editdistance.eval(dict2[dict[i]], dict2[dict[j]])
         Matrix[j][i] = Matrix[i][j]
 
+
+thefile = open('matrix.txt', 'w')
+
 print Matrix
+for i in range(0, len(dict2)):
+    for j in range(0, len(dict2)):
+        thefile.write(str(Matrix[i][j]) + ' ')
+        if j == len(dict2)-1:
+            thefile.write("\n")
+
+thefile.close()
